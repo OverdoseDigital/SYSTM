@@ -1,0 +1,341 @@
+{%- if template.name == 'cart' -%}
+  <div class="page-width">
+    <cart-drawer class="cart-page {% if cart == empty %} is-empty{% endif %}">
+      {%- render 'cart-drawer' with section: section -%}
+    </cart-drawer>
+    <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
+  </div>
+
+  <link rel="stylesheet" href="{{ 'component-cart.css' | asset_url }}" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="{{ 'component-cart-page.css' | asset_url }}" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="{{ 'component-totals.css' | asset_url }}" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="{{ 'component-discounts.css' | asset_url }}" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="{{ 'component-loading-overlay.css' | asset_url }}" media="print" onload="this.media='all'">
+
+  {%- break -%}
+{%- else -%}
+  {%- if settings.cart_type == "drawer" -%}
+
+    <link rel="stylesheet" href="{{ 'component-cart.css' | asset_url }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ 'component-cart-drawer.css' | asset_url  }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ 'component-totals.css' | asset_url }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ 'component-discounts.css' | asset_url }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ 'component-loading-overlay.css' | asset_url }}" media="print" onload="this.media='all'">
+
+  {%- endif -%}
+
+
+  {% if request.design_mode %}
+    <cart-drawer class="cart-global drawer{% if cart == empty %} is-empty{% endif %}">
+      {%- render 'cart-drawer' with section: section -%}
+    </cart-drawer>
+    <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
+  {% elsif template.suffix == 'sections' %}
+    <cart-drawer class="cart-global drawer {% if cart == empty %} is-empty{% endif %}">
+      {%- render 'cart-drawer' with section: section, type: 'drawer' -%}
+    </cart-drawer>
+    {%- break -%}
+  {% elsif template.suffix == 'sections-page' %}
+    <cart-drawer class="cart-global drawer {% if cart == empty %} is-empty{% endif %}">
+      {%- render 'cart-drawer' with section: section, type: 'page' -%}
+    </cart-drawer>
+    {%- break -%}
+  {% else %}
+    <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
+    <cart-drawer class="cart-global drawer {% if cart == empty %} is-empty{% endif %}">
+    </cart-drawer>
+  {%- endif -%}
+
+
+{%- endif -%}
+
+{%- unless template.name == 'cart' -%}
+  {%- if section.settings.upsell_use_recommendations or section.settings.upsell_collection != blank-%}
+    {{ 'component-card.css' | asset_url | stylesheet_tag }}
+    <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'cart-upsell-recommendations.js' | asset_url }}"></script>
+  {%- endif -%}
+{%- endunless -%}
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    function isIE() {
+      const ua = window.navigator.userAgent;
+      const msie = ua.indexOf('MSIE ');
+      const trident = ua.indexOf('Trident/');
+
+      return (msie > 0 || trident > 0);
+    }
+
+    if (!isIE()) return;
+    const cartSubmitInput = document.createElement('input');
+    cartSubmitInput.setAttribute('name', 'checkout');
+    cartSubmitInput.setAttribute('type', 'hidden');
+    document.querySelector('#cart').appendChild(cartSubmitInput);
+    document.querySelector('#checkout').addEventListener('click', function(event) {
+      document.querySelector('#cart').submit();
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Cart Drawer",
+  "class": "shopify-section-cart-drawer",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "This Section controls both the cart drawer and cart page."
+    },
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_count_in_heading",
+      "label": "Show cart item count in heading",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_table_header",
+      "label": "Show table Header",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Summary"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cart_note",
+      "label": "t:settings_schema.cart.settings.show_cart_note.label",
+      "default": false,
+      "info": "Check languages settings for cart note heading and placeholder text"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_subtotal",
+      "label": "Show subtotal",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_total",
+      "label": "Show total",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_discounts",
+      "label": "Show Discounts Breakdown",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_shipping_message",
+      "label": "Show Shipping Message",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_tax_message",
+      "label": "Show Tax Message",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_payment_options",
+      "label": "Show Payment Options",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Cart Actions"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_cart",
+      "label": "Show View Cart Link",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dynamic_checkout_buttons",
+      "label": "Show Dynamic Checkout buttons",
+      "default": true,
+      "info": "Additional checkout buttons have to be enabled on the store for this feature to appear"
+    },
+    {
+      "type": "header",
+      "content": "Gift Wrapping"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_gift_wrapping",
+      "label": "Show Gift Wrapping Checkbox",
+      "default": false,
+      "info": "Edit the text for this in language settings."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_gift_wrapping_message",
+      "label": "Show Gift Wrapping Message",
+      "default": false,
+      "info": "Edit the text for this in language settings."
+    },
+    {
+      "type": "header",
+      "content": "Shipping"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_shipping_estimate",
+      "label": "Show Shipping estimate",
+      "default": true,
+      "info": "Display an average shipping order cost below cart subtotal."
+    },
+    {
+      "type": "text",
+      "id": "shipping_cost",
+      "default": "1000",
+      "label": "Shipping Cost",
+      "info": "(in cents) ie $10 = 1000, leave blank for languages message to display shipping calculated at checkout"
+    },
+    {
+      "type": "text",
+      "id": "free_shipping_threshold",
+      "default": "10000",
+      "label": "Free Shipping Threshold",
+      "info": "(in cents) ie $100 = 10000"
+    },
+    {
+      "type": "header",
+      "content": "Cart Upsells"
+    },
+    {
+      "type": "text",
+      "id": "upsell_title",
+      "label": "Upsell Heading",
+      "default": "You may also like:"
+    },
+    {
+      "type": "checkbox",
+      "id": "upsell_use_recommendations",
+      "label": "Use Shopify Recommendations",
+      "default": true,
+      "info": "Use Shopify Recommendations API to populate the cart upsell based on the last product added to cart."
+    },
+    {
+      "type": "paragraph",
+      "content": "OR"
+    },
+    {
+      "type": "collection",
+      "id": "upsell_collection",
+      "label": "Upsell Collection",
+      "info": "Select a small collection of products to be suggested in the cart as upsell items (max 4)"
+    },
+    {
+      "type": "header",
+      "content": "Threshold Goal"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_threshold_goal",
+      "label": "Threshold Goal",
+      "default": false,
+      "info": "Enable threshold goal progress bar."
+    },
+    {
+      "type": "richtext",
+      "id": "goal_progress_message",
+      "label": "Goal Progress Message",
+      "default": "<p>You are [amount] away from free shipping!</p>",
+      "info": "use [amount] to be replaced dynamically with total remaining until threshold is met."
+    },
+    {
+      "type": "text",
+      "id": "goal_threshold",
+      "label": "Goal Threshold",
+      "default": "10000",
+      "info": "(in cents) i.e $100 = 10000"
+    },
+    {
+      "type": "richtext",
+      "id": "goal_success_message",
+      "label": "Success Message",
+      "default": "<p>Congratulations! You get free shipping</p>",
+      "info": "The message displayed when the customer reaches the goal threshold."
+    },
+    {
+      "type": "header",
+      "content": "Empty Cart State"
+    },
+    {
+      "type": "paragraph",
+      "content": "View languages settings for empty cart messaging."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_account_login",
+      "label": "Show Account Login Button",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_continue_button",
+      "label": "Show Continue Shopping Button",
+      "default": false
+    },
+    {
+      "type": "link_list",
+      "id": "empty_cart_navigation",
+      "label": "Empty Cart Collection Links",
+      "info": "Create a navlist of collections you would like displayed when cart is empty"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "button",
+      "name": "Additional Button",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Button Text",
+          "default": "View Cart"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Button Link"
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "name": "Additional Message",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Additional Message"
+        }
+      ]
+    },
+    {
+      "type": "@app"
+    }
+  ]
+}
+{% endschema %}

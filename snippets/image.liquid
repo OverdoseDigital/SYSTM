@@ -1,0 +1,42 @@
+{% comment %}
+  OD Image snippet
+  - output image tag with srcset and sizes without requiring lazysizes.js
+{% endcomment %}
+{%liquid
+  assign image = image | default: ''
+  assign lazyload = lazyload | default: true
+  assign sizes = '150,375,750,1100,1500,1780,2000,3000,3840' | split: ','
+  assign size = size | default: 's'
+  assign size_override = size_override | default: ''
+  assign image_sources = ''
+  assign image_sizes = ''
+  assign image_class = image_class | default: ''
+
+  case size
+    when 'xs'
+      assign image_sizes = '(max-width: 990px) 100vw, 25vw'
+    when 's'
+      assign image_sizes = '(max-width: 990px) 100vw, 33.3vw'
+    when 'm'
+      assign image_sizes = '(max-width: 990px) 100vw, 50vw'
+    when 'l'
+      assign image_sizes = '(max-width: 990px) 100vw, 75vw'
+    when 'xl'
+      assign image_sizes = '(max-width: 990px) 100vw, 100vw'
+  endcase
+
+  for image_size in sizes
+    assign image_size_number = image_size | plus: 0
+    if image.width < image_size_number 
+      break 
+    endif 
+    assign src_size = image_size | append: 'x' 
+    assign image_link = image | img_url: src_size 
+
+    assign source_width = src_size | replace: 'x', '' | append: 'w,'
+    assign source = image_link | append: ' ' | append: source_width
+    assign image_sources = image_sources | append: source 
+  endfor
+%}
+
+<img class="{{ image_class }}" width="{{ image.width }}" height="{{ image.height }}" srcset="{{ image_sources }}" sizes="{{ size_override | default: image_sizes }}" alt="{{ image.alt | escape }}" {% if lazyload %}loading="lazy"{% endif %} />

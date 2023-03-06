@@ -1,0 +1,62 @@
+{%liquid
+  assign image = image | default: ''
+  assign image_mobile = image_mobile | default: ''
+  assign lazyload = lazyload | default: true
+  assign sizes = '150,375,750,1100,1500,1780,2000,3000,3840' | split: ','
+  assign size = size | default: 'xl'
+  assign size_override = size_override | default: ''
+  assign image_sources = ''
+  assign image_sizes = ''
+  assign image_class = image_class | default: ''
+
+  case size
+    when 'xs'
+      assign image_sizes = 4
+    when 's'
+      assign image_sizes = 3
+    when 'm'
+      assign image_sizes = 2
+    when 'l'
+      assign image_sizes = 1.33
+    when 'xl'
+      assign image_sizes = 1
+  endcase
+%}
+{%- assign break = false -%}
+{%- for image_size in sizes -%}
+    
+  {%- assign next_index = forloop.index -%}
+  {%- assign last_index = forloop.index0 -%}
+
+  {%- assign image_size_number = image_size | plus: 1 -%}
+  {%- if image.width < image_size_number -%}
+    {%- assign break = true -%}
+  {%- endif -%}
+
+  {%- if image_size_number < 900 -%}
+    {%- assign src_size = image_size | append: 'x' -%}
+  {% else %}
+    {%- assign src_size = image_size | divided_by: image_sizes | append: 'x' -%}
+  {%- endif -%}
+
+  {% if image_size_number < 900 and image_mobile != blank  %}
+    {%- assign image_link = image_mobile | img_url: src_size -%}
+  {% else %}
+    {%- assign image_link = image | img_url: src_size -%}
+  {%- endif -%}
+
+  {%- capture source %}
+    <source srcset="{{ image_link }}" media="(min-width: {{ image_size }}px)">
+  {% endcapture -%}
+  
+  {%- assign image_sources = image_sources | append: source | append: ',' -%}
+  {%- if break -%}
+    {%- break -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign image_sources = image_sources | split: ',' | reverse | join: '' -%}
+
+<picture class="{{ image_class }}"> 
+  {{ image_sources }}
+  <img src="{{ image | img_url: sizes.last }}" alt="{{ image.alt | escape }}" loading="lazy" style="width:100%" />
+</picture>

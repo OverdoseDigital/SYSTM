@@ -1,0 +1,210 @@
+{{ 'section-text-with-image-tabs-content.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'section-text-with-image-tabs-content.js' | asset_url }}" defer="defer"></script>
+<noscript>{{ 'section-text-with-image-tabs-content.css' | asset_url | stylesheet_tag }}</noscript>
+
+{%- style -%}
+    #shopify-section-{{section.id}} {background-color:{{section.settings.background_color}};}
+{%- endstyle -%}
+
+<div class="image-with-text__grid page-width page-width--large isolate c-content-block" id="content-block--{{section.settings.heading | handleize}}">
+    <div class="image-with-text grid grid--nav-content {% if section.settings.layout == 'text_first' %} image-with-text__grid--reverse{% endif %}">
+        <div class="image-with-text__media-item image-with-text__nav-content-img grid__item">
+            {% for block in section.blocks %}
+                {% if block.type == 'content' %}
+                    {% if block.settings.heading != blank or block.settings.sub_heading != blank %}
+                        {% if block.settings.heading != blank %}
+                            <h3 class="image-with-text__heading {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>
+                                {{ block.settings.heading | escape }}
+                            </h3>
+                        {% endif %}
+                        {% if block.settings.sub_heading != blank %}
+                            <p class="image-with-text__text image-with-text__text--caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }} {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
+                                {{ block.settings.sub_heading | escape }}
+                            </p>
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
+
+                {% if block.type == 'image' %}
+                    <div class="image-with-text__media global-media-settings media">
+                        {% if block.settings.image != blank %}
+                            {%- render 'image' with block.settings.image, size: 's', load: lazyload -%}
+                        {% else %}
+                            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                        {% endif %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="image-with-text__media-item image-with-text__text-content image-with-text__content--mobile-{{ section.settings.mobile_content_alignment }} grid__item">
+            {% for block in section.blocks %}
+                {% if block.type == 'content' %}
+                    {% if block.settings.heading != blank or block.settings.sub_heading != blank or block.settings.sub_image != blank %}
+                        {% if block.settings.heading != blank %}
+                            <h3 class="image-with-text__heading {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>
+                                {{ block.settings.heading | escape }}
+                            </h3>
+                        {% endif %}
+                        {% if block.settings.sub_heading != blank %}
+                            <p class="image-with-text__text image-with-text__text--caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }} {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
+                                {{ block.settings.sub_heading | escape }}
+                            </p>
+                        {% endif %}
+                        {% if block.settings.sub_image != blank %}
+                            <div class="image-with-text__media global-media-settings media image-with-text__media--small">
+                                {%- if block.settings.sub_image != blank -%}
+                                    {%- render 'image' with block.settings.sub_image, size: 'm', load: lazyload -%}
+                                {%- else -%}
+                                    {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                                {%- endif -%}
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Text/Image Tabs Content",
+    "class": "shopify-section-content-block",
+    "settings": [
+          {
+            "type": "color",
+            "id": "background_color",
+            "label": "Background Color",
+            "default": "#f7f7f7"
+          },
+          {
+            "type": "range",
+            "id": "padding_top",
+            "min": 0,
+            "max": 100,
+            "step": 4,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_top",
+            "default": 40
+          },
+          {
+            "type": "range",
+            "id": "padding_bottom",
+            "min": 0,
+            "max": 100,
+            "step": 4,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_bottom",
+            "default": 20
+         },
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+        },
+      {
+        "type": "select",
+        "id": "heading_size",
+        "options": [
+          {
+            "value": "h2",
+            "label": "t:sections.all.heading_size.options__1.label"
+          },
+          {
+            "value": "h1",
+            "label": "t:sections.all.heading_size.options__2.label"
+          },
+          {
+            "value": "h0",
+            "label": "t:sections.all.heading_size.options__3.label"
+          }
+        ],
+        "default": "h1",
+        "label": "t:sections.all.heading_size.label"
+      },
+      {
+        "type": "select",
+        "id": "mobile_content_alignment",
+        "options": [
+          {
+            "value": "left",
+            "label": "t:sections.text-with-image-and-video.settings.mobile_content_alignment.options__1.label"
+          },
+          {
+            "value": "center",
+            "label": "t:sections.text-with-image-and-video.settings.mobile_content_alignment.options__2.label"
+          },
+          {
+            "value": "right",
+            "label": "t:sections.text-with-image-and-video.settings.mobile_content_alignment.options__3.label"
+          }
+        ],
+        "default": "left",
+        "label": "t:sections.text-with-image-and-video.settings.mobile_content_alignment.label"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Gallery image",
+        "limit": 1,
+        "settings": [
+           {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+           }
+        ]
+      },
+      {
+        "type": "content",
+        "name": "Content blocks",
+        "limit": 1,
+        "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+        },
+        {
+            "type": "text",
+            "id": "sub_heading",
+            "label": "Sub heading"
+        },
+          {
+            "type": "select",
+            "id": "heading_size",
+            "options": [
+              {
+                "value": "h4",
+                "label": "t:sections.all.heading_size.options__1.label"
+              },
+              {
+                "value": "h3",
+                "label": "t:sections.all.heading_size.options__2.label"
+              },
+              {
+                "value": "h3-md",
+                "label": "t:sections.all.heading_size.options__3.label"
+              }
+            ],
+            "default": "h3-md",
+            "label": "t:sections.all.heading_size.label"
+          },
+         {
+           "type": "image_picker",
+           "id": "sub_image",
+           "label": "Image"
+         }
+       ]
+      }
+    ],
+    "presets": [
+        {
+            "name":"Text/Image tabs content"
+        }
+    ]
+}
+{% endschema %}

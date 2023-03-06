@@ -1,0 +1,99 @@
+{
+  "sections": {
+    "images-collage": {
+      "type": "images-collage",
+      "blocks": {
+        "de024297-e4cc-4f73-85d0-b9d91ee19169": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/about1.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/about1-mobile.jpg",
+            "image_padding": false
+          }
+        },
+        "4a30d447-a862-4988-b826-2ad92582fef4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/about3.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/about2-mobile.jpg",
+            "image_padding": false
+          }
+        },
+        "3f3c78df-920b-4f96-b71f-f7dee00ff042": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/about2.jpg",
+            "image_padding": false
+          }
+        }
+      },
+      "block_order": [
+        "de024297-e4cc-4f73-85d0-b9d91ee19169",
+        "4a30d447-a862-4988-b826-2ad92582fef4",
+        "3f3c78df-920b-4f96-b71f-f7dee00ff042"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "mobile_layout": "collage",
+        "color_scheme": "background-1",
+        "padding_top": 40,
+        "padding_bottom": 20
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "rich-text": {
+      "type": "rich-text",
+      "blocks": {
+        "a9ca09c2-6052-4da9-a3cc-d1b1f54c7a13": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Our quality promise<\/p>",
+            "heading_size": "h2"
+          }
+        },
+        "fbd478ed-aa1c-4029-ab1e-3c10309bb8cf": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Quality is never an accident. It is always the result of intelligent effort. We spend most of our time and energy for good design and to achieve high quality. Every single detail from material to technique is thought through with obsessive attention. If our product doesn't satisfy you, we'll take it back.<\/p>"
+          }
+        },
+        "805ee560-ce62-491c-80e2-d24dcc72c1b2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Primary Button",
+            "button_link": "shopify:\/\/pages\/contact",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "a9ca09c2-6052-4da9-a3cc-d1b1f54c7a13",
+        "fbd478ed-aa1c-4029-ab1e-3c10309bb8cf",
+        "805ee560-ce62-491c-80e2-d24dcc72c1b2"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-2",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    }
+  },
+  "order": [
+    "images-collage",
+    "main",
+    "rich-text"
+  ]
+}

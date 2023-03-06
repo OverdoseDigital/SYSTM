@@ -1,0 +1,27 @@
+{% comment %}
+  OD Image-lazy snippet 
+    - required lazysizes.min.js included in theme.liquid
+    - uses lazysizes library to compute the images srcset and size
+{% endcomment %}
+{%liquid
+  assign image = image | default: ''
+  assign lazyload = lazyload | default: true
+  assign width_template = '{width}x' | escape 
+  assign image_class = image_class | default: ''
+  assign image_source = image | img_url: '123x' | replace: '123x', width_template 
+%}
+
+<img class="lazyload {{ image_class }}" 
+data-sizes="auto"
+data-srcset="{{ image_source }}"
+width="{{ image.width }}" 
+height="{{ image.height }}" 
+data-optimumx="1.5"
+data-parent-fit="cover"
+alt="{{ image.alt | escape }}"/>
+
+<noscript>
+  <img class="{{ image_class }}"
+    src="{{ image_source | replace: width_template, '640x' }}"
+    alt="{{ image.alt | escape }}">
+</noscript>

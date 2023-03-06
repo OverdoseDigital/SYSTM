@@ -1,0 +1,52 @@
+{%liquid
+  assign section = section | default: ''
+
+  assign use_recommendations = section.settings.upsell_use_recommendations
+  assign collection = section.settings.upsell_collection
+  assign title = section.settings.upsell_title
+%}
+
+<div class="cart-upsells">
+  {%- if use_recommendations -%}
+    <p class="cart-upsells__title h3">{{ title | escape }}</p>
+    {%- render 'product-recommendations--cart'-%}
+  {% else %}
+    
+    <p class="cart-upsells__title h3">{{ title | escape }}</p>
+
+    <slider-component class="slider-mobile-gutter" data-collection-id="{{upsell_collection.id}}">
+      <ul class="grid grid--1-col product-grid slider slider--desktop negative-margin" role="list">
+        {%- for card_product in collection.products limit: 4-%}
+          <li class="grid__item">
+            {% render "card-product", card_product: card_product, style: 'mini' %}
+          </li>
+        {%- endfor -%}
+      </ul>
+
+      <div class="slider-buttons no-js-hidden">
+        <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'accessibility.previous_slide' | t }}">{% render 'icon-arrow' %}</button>
+        <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'accessibility.next_slide' | t }}">{% render 'icon-arrow' %}</button>
+      </div>
+    </slider-component>
+
+  {%- endif -%}
+
+  <style>
+    .cart-upsells__title {
+      margin-bottom: 0;
+      margin-top: 0.75rem;
+    }
+
+    .cart-upsells product-recommendations {
+      display: block;
+      padding: 0;
+    }
+
+    .cart-upsells .product-grid {
+      margin-top: 0.5rem;
+    }
+  </style>
+  
+</div>
+
+

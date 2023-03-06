@@ -1,0 +1,139 @@
+.enquiry img {
+  max-width: 100%;
+}
+
+.enquiry .form__message {
+  align-items: center;
+}
+
+.enquiry span.form__message svg {
+  margin-right: 10px;
+}
+
+.enquiry .icon-success {
+  margin-top: 0.2rem;
+}
+
+.enquiry span.form__message {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  border-radius: 8px;
+  padding: 8px 16px;
+  color: var(--brand-primary);
+  font-size: 16px;
+}
+
+.enquiry__field-error {
+  display: flex;
+  margin-top: 2rem;
+  align-items: center;
+}
+
+.enquiry small#EnquiryForm-email-error svg {
+  margin-right: 17px;
+}
+
+.enquiry .field__note {
+  color: #bdbfc3;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 0;
+  margin-top: 4px;
+}
+
+.enquiry .field {
+  flex-direction: column;
+  margin-bottom: 1.6rem;
+}
+
+.enquiry .field__label {
+  color: #737373;
+  font-size: 14px;
+  line-height: 1.2em;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  pointer-events: auto;
+  position: static;
+  text-transform: none;
+}
+
+.enquiry .field__input {
+  background: #fff;
+  padding: 1.2rem;
+}
+
+.enquiry__button {
+  margin-top: 16px;
+}
+
+.enquiry__row .title {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -.02em;
+  margin-bottom: 1em;
+}
+
+.enquiry__row .description {
+  font-size: 16px;
+  line-height: 1.4em;
+  letter-spacing: -.02em;
+  margin-bottom: 2em;
+}
+
+.enquiry__row .title .highlight {
+  display: block;
+  font-weight: inherit;
+}
+
+.enquiry__fields {
+  color: #737373;
+  font-size: 14px;
+  line-height: 1.2em;
+  letter-spacing: -0.02em;
+}
+
+.enquiry__button .button {
+  min-height: calc(5.1rem + var(--buttons-border-width) * 2);
+  min-width: 100%;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 750px) {
+  .enquiry__button {
+    margin-top: 0;
+  }
+  
+  .enquiry__row .title {
+    font-size: 32px;
+  }
+  
+  .enquiry__fields {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2rem;
+  }
+
+  .enquiry .text-area {
+    min-height: 12rem;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .enquiry__fields {
+    grid-column-gap: 4rem;
+  }
+
+  .enquiry__row {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-column-gap: 8rem;
+  }
+
+  .enquiry.page-width {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

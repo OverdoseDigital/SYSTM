@@ -1,0 +1,14 @@
+{%- assign lastest_product = cart.items | first -%}
+{%- assign product_id = lastest_product.product.id -%}
+<product-recommendations class="product-recommendations page-width section-product-recommendations-padding isolate" data-url="{{ routes.product_recommendations_url }}?section_id=product-recommendations--cart&product_id={{ product_id }}&limit={{ 1 }}">
+  {% if recommendations.performed and recommendations.products_count > 0 %}
+    <ul class="grid grid--1-col product-grid " role="list">
+      {% for recommendation in recommendations.products %}
+        <li class="grid__item">
+          {% render 'card-product', card_product: recommendation, style: 'mini' %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</product-recommendations>
+

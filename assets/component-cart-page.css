@@ -1,0 +1,140 @@
+cart-drawer.cart-page  {
+  position: relative;
+  visibility: visible;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.cart-page .cart-drawer__overlay,
+.cart-page .cart-drawer__close {
+  display: none;
+}
+
+.cart-page .cart__inner {
+  transform: none;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  border: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  transition: none;
+  display: flex;
+}
+
+.cart-page .cart__header {
+  width: 100%;
+}
+
+.cart-page cart-items {
+  width: 100%;
+}
+
+.cart__footer {
+  width: 100%;
+}
+
+.cart-page .cart__threshold {
+  width: 100%;
+}
+
+.cart-page .cart-threshold-goal {
+  width: 100%;
+  max-width: 400px;
+}
+
+.cart-item__image {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+}
+
+.cart-drawer:focus-visible {
+  outline: none;
+}
+
+@media screen and (min-width: 990px) {
+
+  .cart-page .cart__footer {
+    width: 40%;
+    margin-left: auto;
+  }
+
+  .cart-item__media {
+    width: 10%;
+    min-width: 100px;
+  }
+
+  .cart-item__details {
+    width: 55%;
+  }
+
+  .cart-item__quantity {
+    width: 25%;
+  }
+
+  .cart-item__totals {
+    width: 10%;
+  }
+
+  .cart-items tr th:nth-of-type(1) {
+    width: 65%;
+  }
+
+  .cart-items tr th:nth-of-type(2) {
+    width: 25%;
+  }
+
+  .cart-items tr th:nth-of-type(3) {
+    width: 10%;
+  }
+}
+.cart-items tr th {
+  text-align: left;
+}
+
+.cart__footer {
+  width: 100%;
+}
+
+.cart__gift-wrapping {
+  width: 100%;
+}
+
+@media screen and (min-width: 750px) {
+  .cart-items th {
+    border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
+  }
+
+  .cart-items th + th {
+    padding-left: 4rem;
+  }
+
+  .cart-items td {
+    vertical-align: middle;
+    padding-top: 4rem;
+  }
+
+  .cart-item {
+    display: table-row;
+  }
+
+  .cart-item > td + td {
+    padding-left: 4rem;
+  }
+
+  .cart-item cart-remove-button {
+    margin: 0;
+  }
+
+  .cart-item__price-wrapper > *:only-child:not(.cart-item__discounted-prices) {
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .cart-item .cart-item__quantity,
+  .cart-items .cart-items__heading--wide {
+    padding-left: 6rem;
+  }
+}

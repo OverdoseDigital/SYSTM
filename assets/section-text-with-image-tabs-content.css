@@ -1,0 +1,105 @@
+.c-content-block {
+  overflow: hidden;
+  display: none;
+}
+
+.c-content-block.is-active {
+  display: block;
+}
+
+.grid.grid--nav-content .grid__item {
+  width: 100%;
+  max-width: 100%;
+}
+
+.grid.grid--nav-content .image-with-text__text-content .image-with-text__media {
+  margin-top: 32px;
+}
+
+@media screen and (min-width: 990px) {
+  .c-content-block {
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+
+  .grid.grid--nav-content {
+    display: grid;
+    grid-template-columns: 1fr 37.5% ;
+    column-gap: 50px;
+    overflow: hidden;
+  }
+
+  .grid.grid--nav-content .grid__item.image-with-text__video-item {
+    align-self: flex-end;
+  }
+
+  .grid.grid--nav-content.image-with-text__grid--reverse {
+    grid-template-columns:  1fr 37.5rem;
+  }
+
+  .grid.grid--nav-content .image-with-text__media.image-with-text__media--small {
+    margin-right: 60px;
+    max-width: 450px;
+  }
+
+  .grid.grid--nav-content .image-with-text__nav-content-img {
+    min-height: 60rem;
+  }
+
+  .grid.grid--nav-content .image-with-text__nav-content-img .image-with-text__heading,
+  .grid.grid--nav-content .image-with-text__nav-content-img .image-with-text__text--caption {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1380px) {
+  .grid.grid--nav-content .image-with-text__content--mobile-left .image-with-text__media {
+    min-height: 450px;
+    max-width: 450px;
+    max-height: 450px;
+    margin-top: auto;
+  }
+
+  .grid.grid--nav-content .image-with-text__content--mobile-left.grid__item {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .c-content-block {
+    padding-top: 15px;
+    padding-bottom: 30px;
+  }
+
+  .grid.grid--nav-content {
+    row-gap: 16px;
+  }
+
+  .grid.grid--nav-content .image-with-text__text-content .image-with-text__media {
+    margin-top: 0;
+  }
+
+  .grid.grid--nav-content .grid__item:first-child {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .grid.grid--nav-content .image-with-text__text-content .image-with-text__heading,
+  .grid.grid--nav-content .image-with-text__text-content .image-with-text__text--caption {
+    display: none;
+  }
+
+  .grid.grid--nav-content .image-with-text__nav-content-img.grid__item .media {
+    padding-bottom: 0;
+    min-height: auto;
+    order: 3;
+    margin-top: 32px;
+    overflow: visible!important;
+  }
+
+  .grid.grid--nav-content .image-with-text__nav-content-img.grid__item .media > img {
+    position: relative;
+    height: auto;
+  }
+}

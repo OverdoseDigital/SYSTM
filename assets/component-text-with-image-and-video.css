@@ -1,0 +1,106 @@
+.grid.grid--video {
+  margin-top: 40px;
+}
+
+.grid.grid--video.image-with-text__grid--reverse > .grid__item:last-child {
+  order: 1;
+}
+
+.grid.grid--video.image-with-text__grid--reverse > .grid__item:first-child {
+  order: 2;
+}
+
+.grid.grid--video .grid__item {
+  width: 100%;
+  max-width: 100%;
+}
+
+.grid.grid--video .image-with-text__media {
+  margin-top: 40px;
+}
+
+@media screen and (min-width: 990px) {
+  .grid.grid--video {
+    display: grid;
+    grid-template-columns: 37.5% 1fr;
+    column-gap: 50px;
+    margin-top: 40px;
+    overflow: hidden;
+  }
+
+  .grid.grid--video .grid__item.image-with-text__video-item {
+    align-self: flex-end;
+  }
+
+  .grid.grid--video.image-with-text__grid--reverse {
+    grid-template-columns:  1fr 37.5%;
+  }
+
+  .grid.grid--video .image-with-text__media {
+    margin-top: 32px;
+  }
+}
+
+@media screen and (min-width: 1380px) {
+  .grid.grid--video .image-with-text__media {
+    min-height: 450px;
+    max-width: 450px;
+    max-height: 450px;
+    margin-top: auto;
+  }
+
+  .grid.grid--video .image-with-text__content--mobile-left.grid__item {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+p.image-with-text__text,
+.image-with-text__text > p {
+  margin-top: 0;
+  line-height: 23px;
+  letter-spacing: 0.02px;
+}
+
+.image-with-text__heading,
+.h2-lg {
+  line-height: 1;
+  margin: 0 0 12px;
+}
+
+.h2-lg {
+  font-size: calc(var(--font-heading-scale) * 2.2rem);
+}
+
+h3.image-with-text__heading {
+  line-height: 19px;
+  margin: 0 0 16px;
+  overflow: visible!important;
+}
+
+.h3-md {
+  font-size: calc(var(--font-heading-scale) * 1.6rem);
+}
+
+@media only screen and (min-width: 990px) {
+  .h2-lg {
+    font-size: calc(var(--font-heading-scale) * 3.2rem);
+  }
+
+  .h3-md {
+    font-size: calc(var(--font-heading-scale) * 2.4rem);
+    line-height: 1;
+    margin: 0 0 16px;
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .grid.grid--video {
+    flex-direction: column;
+    row-gap: 16px;
+  }
+
+  .image-with-text__media--small {
+    padding-bottom: 100%;
+  }
+}

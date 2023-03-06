@@ -1,0 +1,467 @@
+{
+  "sections": {
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "The future of health care furniture",
+            "heading_size": "h0"
+          }
+        },
+        "text": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_style": "body"
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Learn more",
+            "button_link_1": "shopify:\/\/collections\/all",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "button"
+      ],
+      "settings": {
+        "above_the_fold": true,
+        "video_background": false,
+        "video_url": "",
+        "video_background_mobile": false,
+        "video_url_mobile": "",
+        "image_overlay_opacity": 40,
+        "image_height": "large",
+        "adapt_height_first_image": false,
+        "desktop_content_position": "middle-right",
+        "show_text_box": false,
+        "desktop_content_alignment": "right",
+        "color_scheme": "background-1",
+        "mobile_content_position": "middle-center",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "93c4e522-6c2b-48d1-8740-6f720303a5de": {
+      "type": "text-with-image-and-video",
+      "blocks": {
+        "template--18063461351733__93c4e522-6c2b-48d1-8740-6f720303a5de-1676953443d806df3b-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "What is SYSTM™",
+            "heading_size": "h2-lg"
+          }
+        },
+        "template--18063461351733__93c4e522-6c2b-48d1-8740-6f720303a5de-1676953443d806df3b-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "d4846578-4034-40a3-87e4-f7f6548d7977": {
+          "type": "image_subheader",
+          "settings": {
+            "image_subheader": "Inspirational living spaces",
+            "heading_size": "h3-md"
+          }
+        },
+        "d89ab108-a6e6-4d18-886c-4c937a890cff": {
+          "type": "image_top_text",
+          "settings": {
+            "image_top_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat odio facilisis mauris sit amet massa.",
+            "text_style": "subtitle",
+            "text_size": "medium"
+          }
+        }
+      },
+      "block_order": [
+        "template--18063461351733__93c4e522-6c2b-48d1-8740-6f720303a5de-1676953443d806df3b-0",
+        "template--18063461351733__93c4e522-6c2b-48d1-8740-6f720303a5de-1676953443d806df3b-1",
+        "d4846578-4034-40a3-87e4-f7f6548d7977",
+        "d89ab108-a6e6-4d18-886c-4c937a890cff"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/hp_content_block.jpg",
+        "height": "small",
+        "layout": "image_first",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 80,
+        "padding_bottom": 40,
+        "heading_size": "h1",
+        "cover_image": "shopify:\/\/shop_images\/hp_video_cover_block.jpg",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "description": "",
+        "full_width": true
+      }
+    },
+    "f12bbd57-48a3-498b-a842-859b609a43d7": {
+      "type": "text-with-image-tabs",
+      "blocks": {
+        "9454236c-149c-4eb7-851c-e63cc5a091c7": {
+          "type": "text",
+          "settings": {
+            "heading": "Armchairs"
+          }
+        },
+        "8eb0fc7a-057c-4ff6-9c15-cb37a66574c0": {
+          "type": "text",
+          "settings": {
+            "heading": "Sofas"
+          }
+        },
+        "66a5c0aa-0492-491e-a821-7c7ae24dd552": {
+          "type": "text",
+          "settings": {
+            "heading": "Dinning sets"
+          }
+        },
+        "b8be8c35-9c74-4ed7-b4ec-8c6dd342a837": {
+          "type": "heading",
+          "settings": {
+            "main_block_heading": "Why choose SYSTM™",
+            "heading_size": "h2-lg"
+          }
+        },
+        "c0ffa44e-6070-4526-abdd-d52da6529b39": {
+          "type": "caption",
+          "settings": {
+            "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "text_style": "subtitle",
+            "text_size": "medium"
+          }
+        }
+      },
+      "block_order": [
+        "9454236c-149c-4eb7-851c-e63cc5a091c7",
+        "8eb0fc7a-057c-4ff6-9c15-cb37a66574c0",
+        "66a5c0aa-0492-491e-a821-7c7ae24dd552",
+        "b8be8c35-9c74-4ed7-b4ec-8c6dd342a837",
+        "c0ffa44e-6070-4526-abdd-d52da6529b39"
+      ],
+      "settings": {
+        "background_color": "#f7f7f7",
+        "padding_top": 80,
+        "padding_bottom": 20,
+        "heading_size": "h1"
+      }
+    },
+    "1ddec12b-2f2c-492a-a2eb-5c1891c677d6": {
+      "type": "text-with-image-tabs-content",
+      "blocks": {
+        "0797224d-357a-4662-b8bf-5cba0638ec2f": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hp_text_image_tab.jpg"
+          }
+        },
+        "341c7a1b-05bd-40af-a4fb-41bd284bf61f": {
+          "type": "content",
+          "settings": {
+            "heading": "Inspirational living spaces",
+            "sub_heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat odio facilisis mauris sit amet massa.",
+            "heading_size": "h3-md",
+            "sub_image": "shopify:\/\/shop_images\/hp_text_image_tab_2.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "0797224d-357a-4662-b8bf-5cba0638ec2f",
+        "341c7a1b-05bd-40af-a4fb-41bd284bf61f"
+      ],
+      "settings": {
+        "background_color": "#f7f7f7",
+        "padding_top": 20,
+        "padding_bottom": 40,
+        "heading": "Armchairs",
+        "heading_size": "h1",
+        "mobile_content_alignment": "left"
+      }
+    },
+    "7cbed523-6bd7-48ae-8e19-ae3050793957": {
+      "type": "text-with-image-tabs-content",
+      "blocks": {
+        "7efb124a-4d6b-421e-8c98-0422a620cf1d": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hp_text_image_tab.jpg"
+          }
+        },
+        "d6755550-b65c-4312-a527-3e0083ec045f": {
+          "type": "content",
+          "settings": {
+            "heading": "Inspirational living spaces",
+            "sub_heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat odio facilisis mauris sit amet massa.",
+            "heading_size": "h3-md",
+            "sub_image": "shopify:\/\/shop_images\/hp_text_image_tab_2.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "7efb124a-4d6b-421e-8c98-0422a620cf1d",
+        "d6755550-b65c-4312-a527-3e0083ec045f"
+      ],
+      "settings": {
+        "background_color": "#f7f7f7",
+        "padding_top": 20,
+        "padding_bottom": 40,
+        "heading": "Dinning sets",
+        "heading_size": "h1",
+        "mobile_content_alignment": "left"
+      }
+    },
+    "da1a3550-8a60-4743-9554-f4a40d1b568b": {
+      "type": "text-with-image-tabs-content",
+      "blocks": {
+        "d0e6a5e1-fbbf-4f92-8c84-f65d36a0b134": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hp_video_cover_block.jpg"
+          }
+        },
+        "f19dbc97-cb1c-4c50-acd6-39122de16424": {
+          "type": "content",
+          "settings": {
+            "heading": "Inspirational living spaces",
+            "sub_heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat odio facilisis mauris sit amet massa.",
+            "heading_size": "h3-md",
+            "sub_image": "shopify:\/\/shop_images\/hp_content_block.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "d0e6a5e1-fbbf-4f92-8c84-f65d36a0b134",
+        "f19dbc97-cb1c-4c50-acd6-39122de16424"
+      ],
+      "settings": {
+        "background_color": "#f7f7f7",
+        "padding_top": 20,
+        "padding_bottom": 40,
+        "heading": "Sofas",
+        "heading_size": "h1",
+        "mobile_content_alignment": "left"
+      }
+    },
+    "rich_text": {
+      "type": "rich-text",
+      "disabled": true,
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Talk about your brand<\/p>",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "6ea7b883-bcf1-4de1-931a-558a1e6f2ffe": {
+      "type": "featured-block",
+      "blocks": {
+        "template--17945835176245__6ea7b883-bcf1-4de1-931a-558a1e6f2ffe-16775685888161879b-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Anatomy of a SYSTM™ Armchair",
+            "heading_size": "h2"
+          }
+        },
+        "template--17945835176245__6ea7b883-bcf1-4de1-931a-558a1e6f2ffe-16775685888161879b-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Light weight and modular pieces<\/strong><\/p><p><\/p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lobortis efficitur sapien nec lobortis. <\/p>",
+            "text_style": "body"
+          }
+        },
+        "646e7b56-2a9b-46c2-be86-d87bca30a537": {
+          "type": "text",
+          "settings": {
+            "text": "<p><\/p><p><strong>Antibacterial and easy cleaning fabrics<\/strong><\/p><p><\/p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lobortis efficitur sapien nec lobortis. Phasellus tincidun<\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "template--17945835176245__6ea7b883-bcf1-4de1-931a-558a1e6f2ffe-16775685888161879b-0",
+        "template--17945835176245__6ea7b883-bcf1-4de1-931a-558a1e6f2ffe-16775685888161879b-1",
+        "646e7b56-2a9b-46c2-be86-d87bca30a537"
+      ],
+      "settings": {
+        "above_the_fold": false,
+        "image": "shopify:\/\/shop_images\/8f30ec8fad9d2e9fda95092baca5ad68.png",
+        "image_mobile": "shopify:\/\/shop_images\/hp_text_image_tab_2.jpg",
+        "video_background": false,
+        "video_url": "",
+        "video_background_mobile": false,
+        "video_url_mobile": "https:\/\/cdn.shopify.com\/s\/files\/1\/0582\/5000\/2628\/files\/happy-dog-outdoor.mp4?v=1646765486",
+        "link_text": "Explore more",
+        "link_text_url": "#",
+        "image_overlay_opacity": 0,
+        "image_height": "large",
+        "adapt_height_first_image": false,
+        "desktop_content_position": "top-right",
+        "show_text_box": true,
+        "desktop_content_alignment": "left",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "df6912f7-1685-4f20-b314-70a5a1c8f518": {
+      "type": "enquiry-form",
+      "settings": {
+        "heading": "Need a quote for a project?get in touch",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "color_scheme": "background-2",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "82444777-0829-4881-b4ea-b4a54a223632": {
+      "type": "image-with-text",
+      "disabled": true,
+      "blocks": {
+        "template--17945835176245__82444777-0829-4881-b4ea-b4a54a223632-167634847169fb0d97-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image with text",
+            "heading_size": "h1"
+          }
+        },
+        "template--17945835176245__82444777-0829-4881-b4ea-b4a54a223632-167634847169fb0d97-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "template--17945835176245__82444777-0829-4881-b4ea-b4a54a223632-167634847169fb0d97-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--17945835176245__82444777-0829-4881-b4ea-b4a54a223632-167634847169fb0d97-0",
+        "template--17945835176245__82444777-0829-4881-b4ea-b4a54a223632-167634847169fb0d97-1",
+        "template--17945835176245__82444777-0829-4881-b4ea-b4a54a223632-167634847169fb0d97-2"
+      ],
+      "settings": {
+        "above_the_fold": false,
+        "image": "shopify:\/\/shop_images\/rack-of-womens-clothing.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "4776f4f1-5291-4697-819f-aad98fe83918": {
+      "type": "image-banner",
+      "disabled": true,
+      "blocks": {
+        "template--17945835176245__4776f4f1-5291-4697-819f-aad98fe83918-16763486013b304c1b-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image banner",
+            "heading_size": "h1"
+          }
+        },
+        "template--17945835176245__4776f4f1-5291-4697-819f-aad98fe83918-16763486013b304c1b-1": {
+          "type": "text",
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_style": "body"
+          }
+        },
+        "template--17945835176245__4776f4f1-5291-4697-819f-aad98fe83918-16763486013b304c1b-2": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--17945835176245__4776f4f1-5291-4697-819f-aad98fe83918-16763486013b304c1b-0",
+        "template--17945835176245__4776f4f1-5291-4697-819f-aad98fe83918-16763486013b304c1b-1",
+        "template--17945835176245__4776f4f1-5291-4697-819f-aad98fe83918-16763486013b304c1b-2"
+      ],
+      "settings": {
+        "above_the_fold": false,
+        "video_background": false,
+        "video_url": "",
+        "video_background_mobile": false,
+        "video_url_mobile": "",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "adapt_height_first_image": false,
+        "desktop_content_position": "top-right",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_position": "middle-center",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    }
+  },
+  "order": [
+    "image_banner",
+    "93c4e522-6c2b-48d1-8740-6f720303a5de",
+    "f12bbd57-48a3-498b-a842-859b609a43d7",
+    "1ddec12b-2f2c-492a-a2eb-5c1891c677d6",
+    "7cbed523-6bd7-48ae-8e19-ae3050793957",
+    "da1a3550-8a60-4743-9554-f4a40d1b568b",
+    "rich_text",
+    "6ea7b883-bcf1-4de1-931a-558a1e6f2ffe",
+    "df6912f7-1685-4f20-b314-70a5a1c8f518",
+    "82444777-0829-4881-b4ea-b4a54a223632",
+    "4776f4f1-5291-4697-819f-aad98fe83918"
+  ]
+}
